@@ -4,6 +4,7 @@ export enum ROUTES {
     MAIN_PAGE = '/',
     SETTINGS = '/settings',
     CELLURAR_AUTOMATION = '/celluarar',
+    PARALLEL_SORTING = '/parallel',
 }
 
 const router = createRouter({
@@ -23,6 +24,11 @@ const router = createRouter({
             path: ROUTES.SETTINGS,
             name: 'Settings',
             component: () => import('@/views/SettingsPage.vue')
+        },
+        {
+            path: ROUTES.PARALLEL_SORTING,
+            name: 'ParallelSorting',
+            component: () => import('@/views/ParallelSorting.vue')
         },
     ]
 })

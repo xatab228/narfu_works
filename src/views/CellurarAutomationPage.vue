@@ -2,7 +2,7 @@
 import {ref, nextTick} from "vue";
 import {drawCellurarAutomation} from "@/utils/cellurar";
 
-const rules = ref([18, 30, 90, 110, 126, 161, 184, 218])
+const rules = ref<number[]>([ 30, 90, 110])
 const canvas = ref(null)
 let isCanvasVisible = ref(false)
 const selectedRule = ref(30)

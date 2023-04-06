@@ -8,7 +8,12 @@ type RouteBtn = {
     path: string
 }
 
-const routeBtns: RouteBtn[] = computed(() => [
+const routeButtons = computed<RouteBtn[]>(() => [
+    {
+      name: 'Parallel Sorting',
+      icon: 'mdi-heart',
+      path: ROUTES.PARALLEL_SORTING
+    },
     {
         name: 'Cellular Automaton',
         icon: 'mdi-heart',
@@ -26,7 +31,7 @@ const routeBtns: RouteBtn[] = computed(() => [
 <template>
     <div class="navbar">
         <v-btn
-                v-for="(routeBtn, index) in routeBtns"
+                v-for="(routeBtn, index) in routeButtons"
                 :key="index"
                 @click="$router.push(routeBtn.path)"
         >
