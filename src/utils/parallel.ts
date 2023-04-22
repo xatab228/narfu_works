@@ -1,7 +1,8 @@
 import WorkerPath from './worker?worker&url'
+import type {SortingMethods} from "@/utils/sortingFunctions";
 
 export default interface ParallelOptions {
-  sortingMethod: 'default'
+  sortingMethod: SortingMethods
 }
 export async function useParallel<T>(data: T[], options?: ParallelOptions){
   return await parallelSort(data, options)
