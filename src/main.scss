@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+}
+
 .layout {
   display: flex;
   width: 100%;
@@ -9,4 +14,14 @@
   @extend .layout;
   justify-content: center;
   align-items: center;
+}
+
+.v-app-bar {
+  top: 10px !important;
+  border-radius: 30px !important;
+  left: 100px !important;
+  width: calc(100% - 200px) !important;
+}
+.v-main {
+  --v-layout-top: 84px !important;
 }

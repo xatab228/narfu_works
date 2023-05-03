@@ -17,7 +17,7 @@ const createNewBigArray = (len: number, options?: {min?: number, max?: number}):
   const min = options && options.min ? options.min : 0;
   return new Promise((resolve,reject) => {
     try {
-      const newArray = Array.from({length: len}, (_,index) => Math.ceil(Math.random() * (max - min)));
+      const newArray = Array.from({length: len}, () => Math.ceil(Math.random() * (max - min)));
       resolve(newArray)
     } catch (e) {
       reject(e)
@@ -25,7 +25,7 @@ const createNewBigArray = (len: number, options?: {min?: number, max?: number}):
   })
 }
 const parallelOptions = {
-  sortingMethod: SortingMethods.DEFAULT
+  sortingMethod: SortingMethods.QUICK
 }
 const onCreateArray = () => {
   createArrayBtnIsLoading.value = true;
@@ -44,6 +44,7 @@ const onParallelSort = async () => {
   isLoadingParallel.value = true
   const t0 = performance.now();
   const parallelSort = await useParallel(sortingData.value, parallelOptions);
+  console.log(parallelSort)
   const t1 = performance.now();
   parallelSortingTime.value = t1 - t0;
   isLoadingParallel.value = false
